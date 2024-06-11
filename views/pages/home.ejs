@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiBarkas.id</title>
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/footer.css">
+</head>
+<body>
+
+<%- include('../layouts/navbar') %>
+
+
+    <main class="home-page">
+        <!-- Home Section Start -->
+        <section class="home-section">
+            <div class="div-home-1">
+                <p>SiBarkas.id</p>
+                <p>Lapak Barang Bekas Berkualitas</p>
+                <span>
+                    <p>Punya barang gk kepake tapi masih bagus?</p>
+                    <p>Jual disini aja!</p>
+                </span>
+                <button onclick="window.location.href='http://localhost:3000/user/upload'">Sell Now!</button>
+            </div>
+            <div>
+                <img src="img/home-wallpaper.png" alt="">
+            </div>
+        </section>
+        <!-- Home Section End -->
+    </main>
+
+
+    
+
+
+<%- include('../layouts/footer') %>
+
+</body>
+</html>

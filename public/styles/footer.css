@@ -1,0 +1,14 @@
+.footer-section {
+    width: 100%;
+    height: 500px;
+    background-color: rgb(31 41 55);
+    position: relative;
+}
+
+.footer-section div {
+    width: 100%;
+    height: 25px;
+    background: #18191A;
+    position: absolute;
+    bottom: 0;
+}

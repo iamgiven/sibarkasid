@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../styles/products.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+</head>
+<body>
+    
+<%- include('../layouts/navbar') %>
+
+
+    <!-- Products Section Start -->
+    <section class="product-section">
+        <div class="div-product-section">
+
+            <!-- Baris Produk Start -->
+            <% if (products && products.length) { %>
+                    <div class="row-product">
+                        <% for(let i = 0; i < products.length; i++) { %>
+
+                            <a href="<%= products[i].link_barang %>">
+                                <div class="product-items">
+                                    <div></div>
+                                    <img src="<%= products[i].img_barang %>" alt="">
+                                    <div class="product-info">
+                                        <div>
+                                            <p>
+                                                <%= products[i].nama_barang %>
+                                            </p>
+                                            <p>
+                                                <%= products[i].deskripsi_barang %>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p>Rp<%= products[i].harga_barang.toLocaleString('id-ID') %>,-</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            
+                        <% } %>
+                    </div>
+                
+            <% } else { %>
+                <div class="div-no-product">
+                    <img class="img-no-product" src="img/no-product.png" alt="">
+                    <p class="caption-no-product">Maaf, barang yang kamu cari ga ada</p>
+                </div>
+            <% } %>
+            <!-- Baris Produk End -->
+
+        </div>
+    </section>
+    <!-- Products Section End -->
+
+
+<%- include('../layouts/footer') %>
+    
+</body>
+</html>

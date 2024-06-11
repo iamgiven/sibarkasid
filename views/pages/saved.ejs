@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved</title>
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../styles/saved.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+</head>
+<body>
+
+<%- include('../layouts/navbar') %>
+
+    
+    <section class="saved-section">
+        
+        <div class="div-saved-section">
+            <div class="title-saved-section">
+                <p>Halaman Tersimpan</p>
+            </div>
+
+            <% if (products && products.length) { %>
+            <div class="row-saved">
+                <% for(let i = 0; i < products.length; i++) {
+                %>
+                <a href="<%= products[i].link_barang %>">
+                    <div class="saved-items">
+                        <div></div>
+                        <img src="<%= products[i].img_barang %>" alt="">
+                        <div class="saved-info">
+                            <div>
+                                <p>
+                                    <%= products[i].nama_barang %>
+                                </p>
+                                <p>
+                                    <%= products[i].deskripsi_barang %>
+                                </p>
+                            </div>
+                            <div>
+                                <p>Rp<%= products[i].harga_barang.toLocaleString('id-ID') %>,-</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <% } %>
+            </div>
+            <% } else { %>
+                <div class="div-no-saved">
+                    <img class="img-no-saved" src="../img/no-bookmark.png" alt="">
+                    <p class="caption-no-saved">Tidak ada barang yang tersimpan</p>
+                </div>
+            <% } %>
+
+            
+        </div>
+    </section>
+
+
+<%- include('../layouts/footer') %>
+
+</body>
+</html>

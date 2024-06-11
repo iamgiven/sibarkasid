@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../styles/upload.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+</head>
+<body>
+
+<%- include('../layouts/navbar') %>
+
+    <section class="upload-section">
+        <div class="div-upload-section">
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="upload-title">
+                    <p>Upload Barang</p>
+                </div>
+                <div class="div-upload-input">
+                    <div class="upload-input">
+                        <p>Nama barang :</p>
+                        <div>
+                            <input type="text" name="nama_barang" required>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="upload-input">
+                        <p>Deskripsi barang :</p>
+                        <div>
+                            <textarea id="my-textarea" cols="10" rows="10" name="deskripsi_barang" required></textarea>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="upload-input">
+                        <p>Harga barang :</p>
+                        <div>
+                            <input type="number" name="harga_barang" required>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="upload-input">
+                        <p>Foto barang :</p>
+                        <input type="file" name="img_barang" required>
+                    </div>
+                    <div class="submit-input">
+                        <input type="submit" value="Jual">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+<%- include('../layouts/footer') %>
+
+
+<script src="../script/scroll-input.js"></script>
+</body>
+</html>

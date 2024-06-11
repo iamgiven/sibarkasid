@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>User</title>
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/user.css">
+    <link rel="stylesheet" href="styles/footer.css">
+</head>
+<body>
+
+<%- include('../layouts/navbar') %>
+
+
+<section class="user-section">
+    <div class="user-info">
+        <div>
+            <div>
+                <div class="user-info-1">
+                    <div class="user-info-profile">
+                        <div>
+                            <div>
+                                <img src="img/default-profile.png" alt="">
+                            </div>
+                            <div>
+                                <p>@<%= name %></p>
+                            </div>
+                        </div>
+                        <div>
+                            <button onclick="window.location.href=`http://localhost:3000/user/upload`">Upload barang</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-info-2">
+                    <form class="user-info-data">
+                        <div>
+                            <label for="name">Nama Lengkap</label>
+                            <input class="user-info" type="text" id="name" name="name" value="<%= fullName %>" placeholder="-" disabled>
+                        </div>
+                        <span></span>
+                        <div>
+                            <label for="email">Email</label>
+                            <input class="user-info" type="email" id="email" name="email" value="<%= email %>" placeholder="-" disabled>
+                        </div>
+                        <span></span>
+                        <div>
+                            <label for="name">No. HP</label>
+                            <input class="user-info" type="number" id="phone" name="phone" value="<%= phone %>" placeholder="-" disabled>
+                        </div>
+                        <span></span>
+                        <div>
+                            <label for="name">Alamat</label>
+                            <input class="user-info" type="text" id="address" name="address" value="<%= address %>" placeholder="-" disabled>
+                        </div>
+                        <div>
+                            
+                        </div>
+                    </form>
+                    <div class="user-info-products">
+                        <div>
+                            <div class="sold-title-products">
+                                <p>Barang yang dijual :</p>
+                            </div>
+    
+                            <% if (products && products.length) %>
+                            <div class="sold-products-list">
+                                <% for(let i = 0; i < products.length; i++) { %>
+                                <!-- Still under development -->
+                                <div class="sold-info-products">
+                                    <div>
+                                        <img src="<%= products[i].img_barang %>" alt="">
+                                        <p><%= products[i].nama_barang %></p>
+                                    </div>
+                                </div>
+                                <!-- Still under development -->
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <form class="logout-button" action="/logout" method="GET">
+                            <button type="submit">Log Out</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<%- include('../layouts/footer') %>
+<script src="script/edit-user.js"></script>
+</body>
+</html>

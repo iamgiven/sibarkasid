@@ -1,0 +1,118 @@
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input, textarea {
+    outline: none;
+}
+
+.upload-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background: #f5f5f5;
+    font-family: 'lato', sans-serif;
+}
+
+.div-upload-section {
+    width: 450px;
+    max-height: 550px;
+    margin: 150px 0 50px 0;
+    border-radius: 25px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background: #fcfcfc;
+    border: solid 0.5px #ddd;
+}
+
+.upload-title {
+    width: 100%;
+    height: 50px;
+    margin: 20px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-title > p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.div-upload-input {
+    width: 100%;
+    height: 420px;
+    margin: 30px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.upload-input {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.upload-input > p {
+    font-size: 14px;
+    color: #444;
+}
+
+.upload-input > div > input {
+    width: 100%;
+    margin: 0 0 5px 0;
+}
+
+.upload-input:nth-child(3) > div > input {
+    width: 30%;
+}
+
+.upload-input > div > textarea {
+    width: 100%;
+    height: 16px;
+    min-height: 16px;
+    max-height: 48px;
+    font-family: 'lato', sans-serif;
+    resize: none;
+    overflow-y: auto;
+}
+
+.upload-input > div > textarea::-webkit-scrollbar {
+    height: 0px;
+}
+
+.upload-input > div > div {
+    width: 100%;
+    height: .5px;
+    background: #ccc;
+}
+
+.upload-input:nth-child(3) > div > div {
+    width: 30%;
+}
+
+.submit-input {
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.submit-input > input {
+    width: 80px;
+    height: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+    color: #222;
+    background: #ffc107;
+}
+
+.submit-input > input:hover {
+    filter: brightness(90%);
+}
